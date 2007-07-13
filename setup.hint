@@ -1,0 +1,4 @@
+category: Gnome Editors
+requires: cygwin GConf2 gedit glib2 gtk2-x11 libgucharmap5 libintl8 python python-gconf2 python-gnomevfs2 python-gobject2 python-gtk2 python-vte
+sdesc: "Additional plugins for the GNOME text editor"
+ldesc: "Additional plugins for the GNOME text editor"
