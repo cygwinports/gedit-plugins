@@ -1,0 +1,5 @@
+inherit gnome2
+
+DESCRIPTION="Additional plugins for the GNOME text editor"
+
+DIFF_EXCLUDES="gpdefs.py"

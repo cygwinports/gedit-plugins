@@ -1,0 +1,50 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gpdefs.py origsrc/gedit-plugins-2.22.2/configure.ac src/gedit-plugins-2.22.2/configure.ac
+--- origsrc/gedit-plugins-2.22.2/configure.ac	2008-04-20 09:27:44.000000000 -0500
++++ src/gedit-plugins-2.22.2/configure.ac	2008-06-04 20:55:10.109375000 -0500
+@@ -197,7 +197,7 @@
+ EOF
+ 
+ 	if /bin/sh ../libtool --mode=compile ${CC} $PYTHON_CFLAGS -c testpython.c >/dev/null 2>&1 && \
+-		/bin/sh ../libtool --mode=link ${CC} -o testpython.la -rpath `pwd` -module -avoid-version $PYTHON_LIB_LOC testpython.lo $PYTHON_LIBS $PYTHON_EXTRA_LIBS >/dev/null 2>&1 && \
++		/bin/sh ../libtool --mode=link ${CC} -o testpython.la -rpath `pwd` -module -avoid-version -no-undefined $PYTHON_LIB_LOC testpython.lo $PYTHON_LIBS $PYTHON_EXTRA_LIBS >/dev/null 2>&1 && \
+ 		grep 'dlname.*testpython' testpython.la >/dev/null 2>&1;
+ 	then
+ 		result=yes
+@@ -415,6 +415,10 @@
+ fi
+ 
+ PLUGIN_LIBTOOL_FLAGS="-module -avoid-version"
++case "$host_os" in
++	cygwin*|mingw*)
++		PLUGIN_LIBTOOL_FLAGS="$PLUGIN_LIBTOOL_FLAGS -no-undefined" ;;
++esac
+ AC_SUBST(PLUGIN_LIBTOOL_FLAGS)
+ 
+ AC_CONFIG_FILES([
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gpdefs.py origsrc/gedit-plugins-2.22.2/plugins/charmap/Makefile.am src/gedit-plugins-2.22.2/plugins/charmap/Makefile.am
+--- origsrc/gedit-plugins-2.22.2/plugins/charmap/Makefile.am	2008-03-22 08:00:26.000000000 -0500
++++ src/gedit-plugins-2.22.2/plugins/charmap/Makefile.am	2008-06-04 20:55:10.125000000 -0500
+@@ -17,10 +17,8 @@
+ 	gedit-charmap-panel.h				\
+ 	gedit-charmap-panel.c
+ 
+-libcharmap_la_LDFLAGS = \
+-	$(PLUGIN_LIBTOOL_FLAGS)				\
+-	$(GEDIT_LIBS)					\
+-	$(GUCHARMAP_LIBS)
++libcharmap_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
++libcharmap_la_LIBADD = $(GEDIT_LIBS) $(GUCHARMAP_LIBS)
+ 
+ # Plugin Info
+ 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4~' -x aclocal.m4t -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x '*config.h.in' -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x aclocal.m4 -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x gpdefs.py origsrc/gedit-plugins-2.22.2/plugins/showtabbar/Makefile.am src/gedit-plugins-2.22.2/plugins/showtabbar/Makefile.am
+--- origsrc/gedit-plugins-2.22.2/plugins/showtabbar/Makefile.am	2008-03-20 09:03:55.000000000 -0500
++++ src/gedit-plugins-2.22.2/plugins/showtabbar/Makefile.am	2008-06-04 20:55:10.125000000 -0500
+@@ -15,6 +15,7 @@
+ 	gedit-show-tabbar-plugin.c
+ 
+ libshowtabbar_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
++libshowtabbar_la_LIBADD = $(GEDIT_LIBS)
+ 
+ # Plugin Info
+ 

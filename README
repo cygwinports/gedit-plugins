@@ -3,31 +3,31 @@ gedit-plugins
 Additional plugins for the GNOME text editor.
 
 Runtime requirements:
-  cygwin-1.5.24-2
-  GConf2-2.20.1-1
-  gedit-2.20.4-1
-  glib2-2.14.4-1
-  gtk2-x11-2.12.2-1
-  libgucharmap6-1.10.1-1
+  cygwin-1.5.25-11
+  GConf2-2.22.0-1
+  gedit-2.22.3-1
+  glib2-2.16.3-1
+  gtk2-x11-2.12.9-1
+  libgucharmap6-2.22.1-1
   libintl8-0.15-1
-  python-2.5.1-3
-  python-gconf2-2.20.1-1
-  python-gnomevfs2-2.20.1-1
-  python-gobject2-2.14.0-1
-  python-gtk2-2.12.0-1
-  python-vte-0.16.10-1
+  python-2.5.2-1
+  python-gconf2-2.22.1-1
+  python-gnomevfs2-2.22.1-1
+  python-gobject2-2.14.2-1
+  python-gtk2-2.12.1-1
+  python-vte-0.16.13-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.24-2
   autoconf2.5-2.61-1
-  automake1.10-1.10-1
+  automake1.10-1.10.1-1
   binutils-20060817-1
-  cygport-0.3.5-1
-  gawk-3.1.5-4
+  cygport-0.3.11-1
+  gawk-3.1.6-1
   gcc-core-3.4.4-3
-  intltool-0.35.5-1
-  libtool1.5-1.5.23a-2
+  gnome-common-2.20.0-2
+  intltool-0.37.1-1
+  libtool-2.2.2-2
   make-3.81-1
   pkg-config-0.21-1
   sed-4.1.5-2
@@ -41,15 +41,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gedit-plugins-2.18.0-X-src.tar.bz2
+  unpack gedit-plugins-2.22.2-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gedit-plugins-2.18.0-X.cygport all
+  cygport ./gedit-plugins-2.22.2-X.cygport all
 
 This will create:
-  /usr/src/gedit-plugins-2.18.0-X-src.tar.bz2
-  /usr/src/gedit-plugins-2.18.0-X.tar.bz2
+  /usr/src/gedit-plugins-2.22.2-X-src.tar.bz2
+  /usr/src/gedit-plugins-2.22.2-X.tar.bz2
 
 -------------------------------------------
 
@@ -107,15 +107,16 @@ Files included in the binary package:
   /usr/lib/gedit-2/plugins/terminal.py
   /usr/lib/gedit-2/plugins/terminal.pyc
   /usr/lib/gedit-2/plugins/terminal.pyo
-  /usr/share/doc/gedit-plugins-2.20.0/AUTHORS
-  /usr/share/doc/gedit-plugins-2.20.0/COPYING
-  /usr/share/doc/gedit-plugins-2.20.0/ChangeLog
-  /usr/share/doc/gedit-plugins-2.20.0/INSTALL
-  /usr/share/doc/gedit-plugins-2.20.0/NEWS
-  /usr/share/doc/gedit-plugins-2.20.0/README
+  /usr/share/doc/gedit-plugins-2.22.2/AUTHORS
+  /usr/share/doc/gedit-plugins-2.22.2/COPYING
+  /usr/share/doc/gedit-plugins-2.22.2/ChangeLog
+  /usr/share/doc/gedit-plugins-2.22.2/INSTALL
+  /usr/share/doc/gedit-plugins-2.22.2/NEWS
+  /usr/share/doc/gedit-plugins-2.22.2/README
   /usr/share/locale/ar/LC_MESSAGES/gedit-plugins.mo
   /usr/share/locale/az/LC_MESSAGES/gedit-plugins.mo
   /usr/share/locale/be/LC_MESSAGES/gedit-plugins.mo
+  /usr/share/locale/be@latin/LC_MESSAGES/gedit-plugins.mo
   /usr/share/locale/bg/LC_MESSAGES/gedit-plugins.mo
   /usr/share/locale/ca/LC_MESSAGES/gedit-plugins.mo
   /usr/share/locale/cs/LC_MESSAGES/gedit-plugins.mo
@@ -180,6 +181,12 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 2.22.2-1 -----
+Version bump for GNOME 2.22.
+
+----- version 2.20.0-1 -----
+Version bump for GNOME 2.20.
 
 ----- version 2.18.0-1 -----
 Initial release for Cygwin.
