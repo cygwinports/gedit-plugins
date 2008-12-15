@@ -1,0 +1,11 @@
+--- origsrc/gedit-plugins-2.22.5/configure.ac	2008-10-25 04:13:17.000000000 -0500
++++ src/gedit-plugins-2.22.5/configure.ac	2008-12-14 21:46:39.322000000 -0600
+@@ -20,6 +20,8 @@
+ IT_PROG_INTLTOOL([0.35.0])
+ 
+ AC_PROG_LIBTOOL
++dnl when using libtool 2.x create libtool early, because it's used in configure
++m4_ifdef([LT_OUTPUT], [LT_OUTPUT])
+ 
+ AC_ISC_POSIX
+ AC_PROG_CC
