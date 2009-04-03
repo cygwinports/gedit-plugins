@@ -2,9 +2,4 @@ inherit gnome2
 
 DESCRIPTION="Additional plugins for the GNOME text editor"
 
-PATCH_URI="
-	2.22.2-no-undefined.patch
-	2.22.5-libtool22.patch
-"
-
 DIFF_EXCLUDES="gpdefs.py"
