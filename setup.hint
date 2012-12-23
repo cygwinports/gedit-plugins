@@ -1,4 +1,0 @@
-category: Gnome Editors
-requires: gedit libgdk_pixbuf2.0_0 libglib2.0_0 libgtk3_0 libgtksourceview3.0_0 libintl8 libpeas1.0_0 libxml2 python python-cairo python-dbus python-gi girepository-Gtk3.0 girepository-GtkSource3.0 girepository-Peas1.0 girepository-Gucharmap2.90 girepository-Vte2.90
-sdesc: "Additional plugins for the GNOME text editor"
-ldesc: "Additional plugins for the GNOME text editor"
