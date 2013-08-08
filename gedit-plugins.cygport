@@ -1,4 +1,4 @@
-inherit gnome2 python
+inherit gnome2 python3
 
 NAME="gedit-plugins"
 VERSION=3.8.3
@@ -9,3 +9,5 @@ DESCRIPTION="Additional plugins for the GNOME text editor"
 REQUIRES="girepository-Gtk3.0 girepository-GtkSource3.0 girepository-Peas1.0 girepository-Gucharmap2.90 girepository-Vte2.90"
 
 DIFF_EXCLUDES="gpdefs.py"
+
+export PYTHON=${PYTHON3}
