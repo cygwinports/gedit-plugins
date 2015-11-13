@@ -1,15 +1,15 @@
 inherit gnome2 python3
 
 NAME="gedit-plugins"
-VERSION=3.14.1
-RELEASE=2
+VERSION=3.18.0
+RELEASE=1
 CATEGORY="Editors"
 SUMMARY="Additional plugins for the GNOME text editor"
 DESCRIPTION="Additional plugins for the GNOME text editor"
 
 PATCH_URI="3.10.1-glib-gettext.patch"
 
-REQUIRES="girepository-Gtk3.0 girepository-GtkSource3.0 girepository-Peas1.0 girepository-Gucharmap2.90 girepository-Vte2.90 girepository-Ggit1.0"
+REQUIRES="girepository-Gtk3.0 girepository-GtkSource3.0 girepository-Peas1.0 girepository-Gucharmap2.90 girepository-Vte2.91 girepository-Ggit1.0"
 
 DIFF_EXCLUDES="gpdefs.py"
 
