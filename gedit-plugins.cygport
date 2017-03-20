@@ -1,7 +1,7 @@
 inherit gnome2 python3
 
 NAME="gedit-plugins"
-VERSION=3.18.0
+VERSION=3.22.0
 RELEASE=1
 CATEGORY="Editors"
 SUMMARY="Additional plugins for the GNOME text editor"
